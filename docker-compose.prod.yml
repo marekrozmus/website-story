@@ -1,0 +1,12 @@
+version: '3.7'
+
+services:
+  jekyll:
+    image: jekyll/jekyll:3.8
+    command: jekyll serve --config _config.prod.yml
+    environment:
+      - JEKYLL_ENV=production
+    volumes:
+      - $PWD:/srv/jekyll
+    ports:
+      - 80:4000
